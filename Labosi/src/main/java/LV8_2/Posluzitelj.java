@@ -18,7 +18,6 @@ public class Posluzitelj {
     public static void main(String[] args) throws SocketException, IOException {
         DatagramSocket socket;
         socket = new DatagramSocket(5000);
-        while (true) {
             byte[] podaci = new byte[100];
             DatagramPacket prihvatniPaket = new DatagramPacket(podaci, podaci.length);
             socket.receive(prihvatniPaket);
@@ -43,7 +42,7 @@ public class Posluzitelj {
                     prihvatniPaket.getLength(), prihvatniPaket.getAddress(), prihvatniPaket.getPort());
             socket.send(sPaket);
             System.out.println("Paket poslan\n");
-        }
+        
     }
     
 }
